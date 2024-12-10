@@ -24,12 +24,12 @@ class Geeks {
 class Solution {
     int missingNumber(int arr[]) {
         // code here
-        int len = arr.length+1;
-        int expectedSumValue = (len * (len+1))/2;
-        int sumOfValues = 0;
-        for(int i=0; i<arr.length; i++){
-            sumOfValues += arr[i];
-        }
-        return (expectedSumValue - sumOfValues) ;
+       int n = arr.length+1;
+       int expectedSum = (n * (n + 1))/2;
+       int actualSum = 0;
+       for(int num : arr){
+           actualSum += num;
+       }
+       return expectedSum-actualSum;
     }
 }
