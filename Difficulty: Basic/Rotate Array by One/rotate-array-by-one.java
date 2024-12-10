@@ -45,16 +45,10 @@ System.out.println("~");
 class Solution {
     public void rotate(int[] arr) {
         // code here
-        int n = arr.length;
-        if(n == 0){
-            return;
+        int lastIndex = arr[arr.length-1];
+        for(int i = arr.length-1; i > 0; i--){
+            arr[i] = arr[i-1];
         }
-        int lastElement = arr[n-1];
-        for(int i = n-1; i>0; i--){
-            arr[i] = arr[i -1]; 
-        }
-        
-        arr[0] = lastElement;
-      
+        arr[0] = lastIndex;
     }
 }
