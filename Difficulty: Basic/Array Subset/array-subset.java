@@ -41,24 +41,28 @@ class GFG {
 class Solution {
     public boolean isSubset(int a[], int b[]) {
         // Your code here
-        if(a.length <= 0 || b.length <= 0){
-            return false;
-        }
+        
         
         Map<Integer, Integer> map = new HashMap<>();
+        
         for(int num : a){
-            map.put(num, map.getOrDefault(num, 0)+1);
+            map.put(num, map.getOrDefault(num,0)+1);
         }
+        
         for(int num : b){
             if(!map.containsKey(num)){
                 return false;
             }
+            
             int countA = map.get(num);
             if(countA == 0){
                 return false;
             }
+            
             map.put(num, countA-1);
         }
+        
         return true;
+        
     }
 }
