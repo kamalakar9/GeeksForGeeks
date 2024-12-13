@@ -31,8 +31,12 @@ public class Main {
 
 class Solution {
     public int findMin(int[] arr) {
-        // complete the function here
-        Arrays.sort(arr);
-        return arr[0];
+        int min = arr[0];
+        for(int num : arr){
+            if(num <= min){
+                min = num;
+            }
+        }
+        return min;
     }
 }
